@@ -1,0 +1,27 @@
+
+<h1>{{application.id}} {{application.firstName}} {{application.lastName}}</h1>
+
+<table *ngIf="applicationDetailsList" mat-table [dataSource]="applicationDetailsList" class="mat-elevation-z8">
+    <ng-container matColumnDef="cardNo">
+        <th mat-header-cell *matHeaderCellDef> CardNo </th>
+        <td mat-cell *matCellDef="let element"> {{element.cardNo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="issuer">
+        <th mat-header-cell *matHeaderCellDef> Issuer </th>
+        <td mat-cell *matCellDef="let element"> {{element.issuer}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+      </ng-container>
+      <ng-container matColumnDef="transType">
+        <th mat-header-cell *matHeaderCellDef> TransType </th>
+        <td mat-cell *matCellDef="let element"> {{element.transType}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row target="_blank"  *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+</table>
+
+
